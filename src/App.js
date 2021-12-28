@@ -29,13 +29,13 @@ function App() {
         },
     ];
 
-    const addExpenseHandler = (expense) => {
+    const funcao_03 = (expense) => {
         console.log(expense);
     };
 
     return (
         <div>
-            <NewExpense onAddExpense={addExpenseHandler} />
+            <NewExpense prop_result_funcao_02={funcao_03} />
             <Expenses item={expenses} />
         </div>
     );

@@ -18,7 +18,7 @@ const ExpenseForm = (props) => {
         setEnteredDate(event.target.value);
     };
 
-    const submitHandler = (event) => {
+    const funcao_01 = (event) => {
         event.preventDefault();
 
         const expenseData = {
@@ -27,14 +27,14 @@ const ExpenseForm = (props) => {
             date: new Date(enteredDate),
         };
 
-        props.onFormSubmit(expenseData);
+        props.prop_result_funcao_01(expenseData);
         setEnteredTitle("");
         setEnteredAmount("");
         setEnteredDate("");
     };
 
     return (
-        <form onSubmit={submitHandler}>
+        <form onSubmit={funcao_01}>
             <div className="new-expense__controls">
                 <div className="new-expense__control">
                     <label>Title</label>
