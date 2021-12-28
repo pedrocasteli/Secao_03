@@ -20,6 +20,7 @@ const Expenses = (props) => {
                 />
                 {props.item.map((expense) => (
                     <ExpenseItem
+                        key={expense.id}
                         title_prop={expense.title}
                         amount_prop={expense.amount}
                         date_prop={expense.date}
