@@ -2,6 +2,9 @@ import React from "react";
 import "./ExpenseItem.css";
 
 const ExpenseItem = (props) => {
+    const expenseDate = new Date(2021, 4, 28);
+    const expenseTitle = "Luke Skywalker";
+
     return (
         <div className="expense-item">
             <div>28 de maio de 2021</div>
