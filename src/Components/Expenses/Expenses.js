@@ -18,26 +18,13 @@ const Expenses = (props) => {
                     prop_ano_selecionado={ano}
                     prop_result_funcao_04={funcao_05}
                 />
-                <ExpenseItem
-                    title_prop={props.item[0].title}
-                    amount_prop={props.item[0].amount}
-                    date_prop={props.item[0].date}
-                />
-                <ExpenseItem
-                    title_prop={props.item[1].title}
-                    amount_prop={props.item[1].amount}
-                    date_prop={props.item[1].date}
-                />
-                <ExpenseItem
-                    title_prop={props.item[2].title}
-                    amount_prop={props.item[2].amount}
-                    date_prop={props.item[2].date}
-                />
-                <ExpenseItem
-                    title_prop={props.item[3].title}
-                    amount_prop={props.item[3].amount}
-                    date_prop={props.item[3].date}
-                />
+                {props.item.map((expense) => (
+                    <ExpenseItem
+                        title_prop={expense.title}
+                        amount_prop={expense.amount}
+                        date_prop={expense.date}
+                    />
+                ))}
             </Card>
         </div>
     );
