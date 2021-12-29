@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import ExpenseItem from "./ExpenseItem";
 import Card from "../UI/Card";
 import ExpensesFilter from "./ExpensesFilter";
+import ExpensesList from "./ExpensesList";
 import "./Expenses.css";
 
 const Expenses = (props) => {
@@ -11,6 +11,10 @@ const Expenses = (props) => {
         setAno(anoSelecionado);
     };
 
+    const filteredExpenses = props.item.filter((expense) => {
+        return expense.date.getFullYear().toString() === ano;
+    });
+
     return (
         <div>
             <Card classe="expenses">
@@ -18,14 +22,7 @@ const Expenses = (props) => {
                     prop_ano_selecionado={ano}
                     prop_result_funcao_04={funcao_05}
                 />
-                {props.item.map((expense) => (
-                    <ExpenseItem
-                        key={expense.id}
-                        title_prop={expense.title}
-                        amount_prop={expense.amount}
-                        date_prop={expense.date}
-                    />
-                ))}
+                <ExpensesList item={filteredExpenses} />
             </Card>
         </div>
     );
