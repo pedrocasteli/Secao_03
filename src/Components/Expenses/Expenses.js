@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Card from "../UI/Card";
 import ExpensesFilter from "./ExpensesFilter";
 import ExpensesList from "./ExpensesList";
+import ExpensesChart from "./ExpensesChart";
 import "./Expenses.css";
 
 const Expenses = (props) => {
@@ -22,6 +23,7 @@ const Expenses = (props) => {
                     prop_ano_selecionado={ano}
                     prop_result_funcao_04={funcao_05}
                 />
+                <ExpensesChart expenses={filteredExpenses} />
                 <ExpensesList item={filteredExpenses} />
             </Card>
         </div>
